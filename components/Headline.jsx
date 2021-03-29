@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from '../styles/Home.module.css'
 
-function Headline(props) {
+export function Headline(props) {
   console.log(props)
   return (
     <div>
@@ -15,5 +15,3 @@ function Headline(props) {
     </div>
   );
 }
-
-export default Headline

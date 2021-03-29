@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from '../styles/Home.module.css'
 
-function Links() {
+export function Links() {
   return (
     <div className={styles.grid}>
       <a href="https://nextjs.org/docs" className={styles.card}>
@@ -29,5 +29,3 @@ function Links() {
     </div>
   );
 }
-
-export default Links
