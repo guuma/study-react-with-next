@@ -1,9 +1,14 @@
+import { useCallback } from 'react';
 import Head from 'next/head';
 import classes from '../styles/Home.module.css';
 import { Footer } from '../components/Footer';
-import { Header } from '../components/Header'
+import { Header } from '../components/Header';
 import { Main } from '../components/Main';
 
+const handleClick = useCallback((e) => {
+  console.log(e.target.href);
+  e.preventDefault();
+}, []);
 export default function Home() {
   return (
     <div className={classes.container}>
@@ -11,7 +16,10 @@ export default function Home() {
         <title>Index Page</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-			<Header />
+      <Header />
+      <a href="/about" onClick={handleClick}>
+        ボタン
+      </a>
       <Main page="index" />
       <Footer />
     </div>
