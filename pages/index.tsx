@@ -5,11 +5,11 @@ import { Footer } from '../components/Footer';
 import { Header } from '../components/Header';
 import { Main } from '../components/Main';
 
-const handleClick = useCallback((e) => {
-  console.log(e.target.href);
-  e.preventDefault();
-}, []);
 export default function Home() {
+  const handleClick = useCallback((e) => {
+    console.log(e.target.href);
+    e.preventDefault();
+  }, []);
   return (
     <div className={classes.container}>
       <Head>
