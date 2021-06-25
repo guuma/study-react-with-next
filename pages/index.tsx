@@ -7,6 +7,9 @@ import { Main } from '../components/Main';
 
 export default function Home() {
   const [count, setCount] = useState(0);
+  const [text, SetText] = useState('');
+  const [isShow, setIsShow] = useState(false);
+  const showText = isShow ? '非表示' : '表示';
   useEffect(() => {
     console.log(`Component Did Mount: ${count}`);
     document.body.style.backgroundColor = 'lightblue';
@@ -15,9 +18,21 @@ export default function Home() {
       document.body.style.backgroundColor = '';
     };
   }, []);
-  const handleClick = useCallback((e) => {
-    setCount((prevCount) => prevCount + 1);
-  }, [count]);
+  const handleClick = useCallback(
+    (e) => {
+      setCount((prevCount) => prevCount + 1);
+    },
+    [count]
+  );
+  const handleChange = useCallback((e) => {
+    if (text.length >= 5) {
+      return;
+    }
+    SetText(e.target.value);
+  }, []);
+  const handleDisplay = useCallback(() => {
+    setIsShow((isShow) => !isShow);
+  }, []);
   return (
     <div className={classes.container}>
       <Head>
@@ -25,8 +40,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <h1>{count}</h1>
+      {isShow && <h1>{count}</h1>}
       <button onClick={handleClick}>ボタン</button>
+      <button onClick={handleDisplay}>{showText}</button>
+      <input type="text" value={text} onChange={handleChange} />
       <Main page="index" />
       <Footer />
     </div>
