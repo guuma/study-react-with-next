@@ -31,7 +31,7 @@ export default function Home() {
     SetText(e.target.value);
   }, []);
   const handleDisplay = useCallback(() => {
-    setIsShow((isShow) => !isShow);
+    setIsShow((prevIsShow) => !prevIsShow);
   }, []);
   return (
     <div className={classes.container}>
