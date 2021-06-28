@@ -4,14 +4,17 @@ import styles from '../styles/Home.module.css';
 import { Footer } from '../components/Footer';
 import { Header } from '../components/Header';
 import { Main } from '../components/Main';
-import { useCounter } from '../hooks/useCounter';
-import { useInputArray } from 'hooks/useInputArray';
-import { useBgLightBlue } from 'hooks/useBgLightBlue';
 
-export default function About() {
-  const { count, isShow, handleClick, handleDisplay } = useCounter();
-  const { text, array, handleChange, handleAdd } = useInputArray();
-  useBgLightBlue();
+export default function About({
+  count,
+  isShow,
+  handleClick,
+  handleDisplay,
+  text,
+  array,
+  handleChange,
+  handleAdd,
+}) {
   const showText = isShow ? '非表示' : '表示';
   return (
     <div className={styles.container}>
