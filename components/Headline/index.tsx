@@ -1,12 +1,11 @@
-import React, { Children } from 'react';
 import classes from './Headline.module.css';
 
-export function Headline({page, children, handleReduce}) {
+export const Headline = (props) => {
   return (
     <div>
-      <button onClick={handleReduce}>減らす</button>
-      <h1 className={classes.title}>{`${page} Page`}</h1>
-      <p className={classes.description}>アイテムの数は{children}個です</p>
+      <button onClick={props.handleReduce}>減らす</button>
+      <h1 className={classes.title}>{`${props.page} Page`}</h1>
+      <p className={classes.description}>アイテムの数は{props.children}個です</p>
     </div>
   );
-}
+};
