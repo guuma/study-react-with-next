@@ -6,7 +6,7 @@ import { Header } from '../components/Header';
 import { Main } from '../components/Main';
 
 export default function About({
-  count,
+  doubleCount,
   isShow,
   handleClick,
   handleDisplay,
@@ -23,7 +23,7 @@ export default function About({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      {isShow && <h1>{count}</h1>}
+      {isShow && <h1>{doubleCount}</h1>}
       <button onClick={handleClick}>ボタン</button>
       <button onClick={handleDisplay}>{showText}</button>
       <input type="text" value={text} onChange={handleChange} />
