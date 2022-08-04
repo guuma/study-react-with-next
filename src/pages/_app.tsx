@@ -1,6 +1,6 @@
-import { useBgColor } from 'hooks/useBgColor';
-import { useCounter } from 'hooks/useCounter';
-import { useInputArray } from 'hooks/useInputArray';
+import { useBgColor } from 'src/hooks/useBgColor';
+import { useCounter } from 'src/hooks/useCounter';
+import { useInputArray } from 'src/hooks/useInputArray';
 import { ClickToComponent } from 'click-to-react-component';
 
 import '../styles/globals.css';
